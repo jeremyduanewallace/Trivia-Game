@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Trivia-Game</title>
+  
+  <!-- meta tag -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello Front-End</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- google fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+
+  <!-- css-link -->
+  <link rel="stylesheet" href="stylesheet/main.css">
+     
+  <!-- jquery-link -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+  </script>
+     
+  <!-- javascript link    -->
+  <script type='text/javascript' src='javascript/main.js' ></script>
+
+
 </head>
-<body>
-  <h1>Hello Front-End</h1>
-</body>
+<!-- neck -->
+    <body>
+      <!-- <nav>
+        <ul id="left">
+          <li>PLAYER1</li>
+       </ul>
+
+       <ul id="right">
+         <li>PLAYER2</li>
+       </ul>
+
+      </nav> -->
+
+      <div class='player2'>
+        0
+      </div>
+      
+      <div class='player1'>
+        0
+      </div>
+      <h1 class='name'>Trivia</h1>
+      <div class='game-board'>
+        <div class='card'></div>
+        <div class='type-text'>
+          <form id='answer_form' method='' action=''>
+            <input id="answer_input" type="text" name='answer'>
+            <input type="submit" name='submit' value='Check'>
+          </form>
+        </div>
+      </div>
+      <button class="random btn btn-primary btn-lg active">GET Random</button>
+      <button class="one btn btn-primary btn-lg active">100 Points</button>
+      <button class="two btn btn-primary btn-lg active">200 Points</button><br><br>
+      <button class="four btn btn-primary btn-lg active">400 Points</button>
+      <button class="eight btn btn-primary btn-lg active">800 Points</button>
+      <button class="pow_wow btn btn-primary btn-lg active">Panic btn</button>
+    </body>
 </html>
