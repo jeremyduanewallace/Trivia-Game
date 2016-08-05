@@ -8,13 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+  
+  <!-- bootstrap min.css file -->
+  <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
+  
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
   <!-- google fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
 
   <!-- css-link -->
   <link rel="stylesheet" href="stylesheet/main.css">
@@ -23,17 +27,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
   <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
-  </script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+  </script> -->
+  
+  <!-- bootsrap min.js file -->
+  <script src="javascript/bootstrap.min.js"></script>
      
   <!-- javascript link    -->
-  <script type='text/javascript' src='javascript/main.js' ></script>
+  <script type='text/javascript' src='javascript/main.js'></script>
 
 
 </head>
 <!-- neck -->
     <body>
-      <!-- <nav>
+      <nav>
         <ul id="left">
           <li>PLAYER1</li>
        </ul>
@@ -42,7 +49,7 @@
          <li>PLAYER2</li>
        </ul>
 
-      </nav> -->
+      </nav>
 
       <div class='player2'>
         0
@@ -51,7 +58,11 @@
       <div class='player1'>
         0
       </div>
-      <h1 class='name'>Trivia</h1>
+
+      <div id='winner'>
+        <p>Trivia Legend</p>
+      </div>
+      
       <div class='game-board'>
         <div class='card'></div>
         <div class='type-text'>
@@ -61,11 +72,13 @@
           </form>
         </div>
       </div>
-      <button class="random btn btn-primary btn-lg active">GET Random</button>
-      <button class="one btn btn-primary btn-lg active">100 Points</button>
-      <button class="two btn btn-primary btn-lg active">200 Points</button><br><br>
-      <button class="four btn btn-primary btn-lg active">400 Points</button>
-      <button class="eight btn btn-primary btn-lg active">800 Points</button>
-      <button class="pow_wow btn btn-primary btn-lg active">Panic btn</button>
+      <button class="comedy btn btn-primary btn-lg active">Comedy</button>
+      <button class="car btn btn-primary btn-lg active">Cars</button>
+      <button class="silly btn btn-primary btn-lg active">Silly Songs</button><br><br>
+      <button class="color btn btn-primary btn-lg active">Colors</button>
+      <button class="money btn btn-primary btn-lg active">Money</button>
+      <div id='red-box'>
+        <h1>Trivia</h1>
+      </div>
     </body>
 </html>

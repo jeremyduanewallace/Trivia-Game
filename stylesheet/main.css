@@ -1,74 +1,68 @@
 body{
-  background-image: url(../image/bike.jpg);
-
-  font-family: 'Amatic SC', cursive;
+  background-image: url(../image/board.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Oswald', sans-serif;
   font-size: 25px;
 }
 
 .player1{
-  border: 2px solid red;
-  width: 20%;
-  height: 100px;
+  border: 2px solid re;
+  width: 10%;
+  height: 75px;
   border-radius: 5px;
-  color: white;
+  color: #FF530D;
+  
   
   
 }
 
 .player2{
- border: 2px solid red;
- width: 20%;
- height: 100px;
+ border: 2px solid re;
+ width: 10%;
+ height: 75px;
  border-radius: 5px;
  float: right;
- color: white;
+ color: #FF530D;
+ 
 
  
 }
 
 .card{
-  border: 2px solid green;
-  background-color: blue;
+  border: 2px solid gree;
+  color: #FF530D;
   width: 900px;
   height: 150px;
   border-radius: 5%;
   position: relative;
   left: 50px;
-  top: 75px;
+  top: 125px;
   padding-left: 20px;
-  font-size: 40px;
-  color: white;
+  font-size: 50px;
+  
 }
 .game-board{
-  border: 2px solid red;
+  border: 2px solid re;
   width: 1000px;
-  height: 700px;
+  height: 455px;
   border-radius: 5%;
   position: relative;
   left: 333px;
-  top: 75px;
+  top: 175px;
 
 }
 
-h1{
-  /*border: 2px solid red;*/
-  width: 280px;
-  height: 125px;
-  position: absolute;
-  left: 675px;
-  top: 20px;
-  font-size: 125px;
-  color: white;
 
-}
 
 .type-text{
   height: 100px;
-  width: 700px;
-  border: 2px solid red;
+  width: 500px;
+  border: 2px solid re;
   border-radius: 5%;
   position: relative;
-  left: 150px;
+  left: 250px;
   top: 200px;
 
 }
@@ -79,8 +73,8 @@ input{
   top: 25px;
 }
 
-/*nav{
-  color: white;
+nav{
+  color: #FF530D;
 
 }
 ul{
@@ -88,13 +82,39 @@ ul{
 }
 li{
   display: inline;
+  font-size: 40px;
 }
 
 #right{
   position: absolute;
-  left: 1200px;
+  left: 1500px;
   top: 0px;
-}*/
+}
 
+#red-box{
+  width: 100%;
+  height: 100px;
+  border: 2px solid re;
+  position: relative;
+  left: 600px;
+  top: 50px;
+  width: 200px;
+  height: 120px;
+}
+
+h1{
+  font-size: 75px;
+  font-weight: bold;
+  color: #FF530D;
+  
+  }
+
+  #winner p{
+    display: none;
+    font-size: 250px;
+    position: absolute;
+    left: 40%;
+    top: 25%;
+  }
 
 
