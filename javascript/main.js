@@ -8,10 +8,11 @@ $(document).ready(function(){
   var songQuestions = null;
   var colorQuestions = null;
   var moneyQuestions = null;
+  var catQuestions = null;
   
 
 
-  // append points
+  // append points ************************************************
   function appendPoint(points){
     if(currentPlayer === '1'){
       var currentPoints = parseInt($('div.player1').html());
@@ -28,47 +29,51 @@ $(document).ready(function(){
   }
 
 
-  // randomInt function
+  // randomInt function ********************************************
   function randomInt(){
-    return Math.floor(3 * Math.random());
+    return Math.floor(2 * Math.random());
   }
 
   
-  // submit function
+  // submit function ***********************************************
   $('#answer_form').submit(function(event){
     event.preventDefault();
-    console.log('Checking answer');
     checkAnswer();
     document.getElementById('answer_form').reset();
+    
     
   });
 
   
-  // form validation check answer
+  // form validation check answer **********************************
   function checkAnswer(){
     var answer = $('#answer_input').val();
     var actualAnswer = questions[questionIndex].answer.replace("-", " ");
+    actualAnswer = actualAnswer.trim();
+    answer = answer.trim();
     if(answer.toLowerCase() === actualAnswer.toLowerCase()){
        appendPoint(questions[questionIndex].value)
-       alert('correct');
+       $('#correct p').fadeIn(2000);
+       $('#correct p').fadeOut(2000);
     } else {
-       alert('wrong');
+      $('#wrong p').fadeIn(1000);
+      $('#wrong p').fadeOut(3000);
+       
+
     }
   }
 
-  // add points
+  // add points *****************************************************
   function addPoints(num){
-    if(num > 300){
-      //alert('wiiner')
+    if(num > 200){
       $('#winner p').fadeIn(2000);
     }
   }
     
    
     
-  // get request trivia comedy 
+  // get request trivia comedy ***************************************
   $("button.comedy").click(function(data){
-    console.log('clicked');
     console.log(questionIndex);
     if(comedyQuestions) {
       console.log('comedy questions already exists');
@@ -81,7 +86,7 @@ $(document).ready(function(){
         questions = result;
         comedyQuestions = result;
         questionIndex = randomInt();
-        console.log('results', result);
+        console.log('comedy', result); 
         $("div.card").html(result[questionIndex].question);
         counter++
       });
@@ -90,12 +95,11 @@ $(document).ready(function(){
 
 
 
-   // get request trivia cars
+   // get request trivia cars *******************************************
   $("button.car").click(function(data){
-    console.log('clicked');
     console.log(questionIndex);
      if(carQuestions){
-      console.log('car question already exist');
+      console.log('car questions already exists');
       questionIndex = randomInt(); 
       $("div.card").html(carQuestions[questionIndex].question);
       counter++
@@ -105,7 +109,7 @@ $(document).ready(function(){
         questions = result;
         carQuestions = result;
         questionIndex = randomInt();
-        console.log('results', result);
+        console.log('car', result); 
         $("div.card").html(result[questionIndex].question);
         counter++
       });
@@ -113,24 +117,23 @@ $(document).ready(function(){
   });
 
 
-  // get request trivia silly songs
+  // get request trivia silly songs *************************************
   $("button.silly").click(function(data){
-    console.log('clicked');
     console.log(questionIndex);
-      if(songQuestions){
-        console.log('song questions already exist');
+     if(songQuestions){
+      console.log('song questions already exists');
+      questionIndex = randomInt();
+      $("div.card").html(songQuestions[questionIndex].question);
+      counter++
+       return;
+     }else{
+      $.getJSON("http://jservice.io/api/clues/?category=27", function(result){
+        questions = result;
         questionIndex = randomInt();
-        $("div.card").html(songQuestions[questionIndex].question);
-        counter++
-        return;
-      }else{
-        $.getJSON("http://jservice.io/api/clues/?category=27", function(result){
-          questions = result;
-          questionIndex = randomInt();
-          console.log('results', result);
+        console.log('song', result); 
       if(result[questionIndex].question === ""){
-            result.splice(questionIndex, 4)
-          }
+          result.splice(questionIndex, 4)
+        }
           songQuestions = result;
           $("div.card").html(result[questionIndex].question);
           counter++
@@ -139,23 +142,21 @@ $(document).ready(function(){
   });
 
 
-  // get request trivia colors
+  // get request trivia colors *********************************************
   $("button.color").click(function(data){
-    console.log('clicked');
     console.log(questionIndex)
       if(colorQuestions){
-        console.log('color questoins already exist');
-        questionIndex = randomInt();
-        // console.log('results', result);
+       console.log('color questions already exists');
+       questionIndex = randomInt();
        $("div.card").html(carQuestions[questionIndex].question);
-        counter++
-        return;
-      }else{
+       counter++
+       return;
+       }else{
         $.getJSON("http://jservice.io/api/clues/?category=36", function(result){
           questions = result;
           carQuestions = result;
           questionIndex = randomInt();
-          console.log('results', result);
+          console.log('color', result); 
           $("div.card").html(result[questionIndex].question);
           counter++
         });
@@ -163,27 +164,47 @@ $(document).ready(function(){
   });
 
 
-  // get request trivia money
+  // get request trivia money ***********************************************
   $("button.money").click(function(data){
-    console.log('clicked');
     console.log(questionIndex)
     if(moneyQuestions){
       console.log('money questions already exist');
       questionsIndex = randomInt();
-      // console.log('results', result);
       $("div.card").html(moneyQuestions[questionIndex].question);
       counter++
       return;
-    }else{
+      }else{
       $.getJSON("http://jservice.io/api/clues/?category=76", function(result){
         questions = result;
         moneyQuestions = result;
         questionsIndex = randomInt();
-        console.log('results', result);
+        console.log('money', result); 
         if(moneyQuestions[questionIndex].question === ""){
           result.splice(questionIndex, 1)
         }
         $("div.card").html(result[questionIndex].question);
+        counter++
+      });
+    }
+  });
+
+  
+  // get request trivia cat ergory **********************************************
+  $("button.cat").click(function(data){
+    console.log(questionIndex);
+    if(catQuestions) {
+      console.log('cat questions already exists');
+      questionIndex = randomInt();
+      $("div.card").html(catQuestions[questionIndex].question);
+      counter++
+      return;
+      }else{
+      $.getJSON("http://jservice.io/api/clues/?category=6", function(result){
+        questions = result;
+        comedyQuestions = result;
+        questionIndex = randomInt();
+        console.log('cat', result); 
+         $("div.card").html(result[questionIndex].question);
         counter++
       });
     }

@@ -13,6 +13,8 @@ body{
   height: 75px;
   border-radius: 5px;
   color: #FF530D;
+  font-size: 40px;
+  margin-left: 107px;
   
   
   
@@ -25,6 +27,8 @@ body{
  border-radius: 5px;
  float: right;
  color: #FF530D;
+ font-size: 40px;
+
  
 
  
@@ -82,13 +86,17 @@ ul{
 }
 li{
   display: inline;
-  font-size: 40px;
+  font-size: 60px;
 }
 
 #right{
   position: absolute;
-  left: 1500px;
+  left: 1400px;
   top: 0px;
+}
+
+#left{
+
 }
 
 #red-box{
@@ -115,6 +123,24 @@ h1{
     position: absolute;
     left: 40%;
     top: 25%;
+  }
+
+  #correct p{
+    display: none;
+    font-size: 165px;
+    position: absolute;
+    left: 55%;
+    top: 50%;
+    color: #13469E;
+  }
+
+  #wrong p{
+    display: none;
+    font-size: 165px;
+    position: absolute;
+    left: 55%;
+    top: 50%;
+    color: #DE0000;
   }
 
 
